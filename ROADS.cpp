@@ -24,7 +24,7 @@ float ROAD::getspeed_limit(){
 	return speed_limit;
 }
 
-bool ROAD::istraffic_lights(string s){		// Boolean methods
+bool ROAD::is_traffic_lights(string s){		// Boolean methods
 	if (s == "yes" || s == "y")
 	{
 		traffic_lights = true;
@@ -35,7 +35,7 @@ bool ROAD::istraffic_lights(string s){		// Boolean methods
 		traffic_lights = false;
 	}
 }	
-bool ROAD::isbi_directional(string s){
+bool ROAD::is_bi_directional(string s){
 	if (s == "yes" || s == "y")
 	{
 		bi_directional= true;
@@ -47,7 +47,7 @@ bool ROAD::isbi_directional(string s){
 	}
 
 }
-bool ROAD::ispedestrian_crossing(string s){
+bool ROAD::is_pedestrian_crossing(string s){
 	if (s == "yes" || s == "y")
 	{
 	pedestrian_crossing = true;
@@ -56,6 +56,23 @@ bool ROAD::ispedestrian_crossing(string s){
 	else if (s == "no" || s == "n")
 	{
 		pedestrian_crossing = false;
+	}
+}
+
+bool is_weather_bad(string s) {
+	if (s == "snow" || s == "snowy")
+	{
+		// increase safe spacing distance by x% for y vehicle
+	}
+
+	else if (s == "rain" || s == "rainy")
+	{
+		// increase safe spacing distance by x% for y vehicle
+	}
+
+	else if (s == "ice" || s == "black ice")
+	{
+		// increase safe spacing distance by x% for y vehicle
 	}
 }
 

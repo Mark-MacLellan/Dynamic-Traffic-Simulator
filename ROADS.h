@@ -25,9 +25,10 @@ public:
 	float getlane_width();
 	float getspeed_limit();
 
-	bool istraffic_lights(string);	// Boolean methods
-	bool isbi_directional(string);
-	bool ispedestrian_crossing(string);
+	bool is_traffic_lights(string);	// Boolean methods
+	bool is_bi_directional(string);
+	bool is_pedestrian_crossing(string);
+	bool is_weather_bad(string); // <-not 100% sure what type this method would be or how to implement it // work in progress
 
 };
 
