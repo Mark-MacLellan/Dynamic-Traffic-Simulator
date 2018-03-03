@@ -2,9 +2,13 @@
 #define Car_h
 #include "Vehicle.h"
 
-class Car : public Vehicle{
-	void setsize(int, int);
-	void setspeedlim(int);
-	void setbrakedist(int);
+class Car : public Vehicle {
+private:
+
+
+public:
+	void random_dimensions();	//Used to randomly generate a Car within a threshold
+								// of sizes
+
 };
-#endif
+#endif // !CAR_H

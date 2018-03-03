@@ -1,30 +1,12 @@
 #include "Car.h"
+#include<iostream>
 
-void setsize(int width, int length){
-	width = rand() % 199 + 163;
-	length = rand() % 518 + 355;
+using namespace std;
+
+void Car::random_dimensions() {
+	width = rand() % 2 + 1;		// picks random number from the range 1m - 2m 
+	length = rand() % 5 + 2;	// picks random number from the range 2m - 6m
+	height = rand() % 2 + 1;	// picks random number from the range 1m - 2m
 }
 
-void setspeedlim(int speedlim){
-
-}
-
-void setbrakedist(int brakedist, int speedlim) {
-	if (speedlim == 20) {
-		brakedist = 12;
-	}
-	if (speedlim == 30) {
-		brakedist = 23;
-	}
-	if (speedlim == 40) {
-		brakedist = 36;
-	}
-	if (speedlim == 50) {
-		brakedist = 53;
-	}
-	if (speedlim == 60) {
-		brakedist = 73;
-	}
-	if (speedlim == 70) {
-		brakedist = 96;
-	}
+// Average car dimensions found at - http: //www.metric.org.uk/motoring

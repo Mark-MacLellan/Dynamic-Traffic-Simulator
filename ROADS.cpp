@@ -6,7 +6,10 @@ using namespace std;
 
 void ROAD::setno_of_lanes(int x){			// Setter methods
 	no_of_lanes = x;
-}		
+}	
+void ROAD::setroad_length(int x) {
+	road_lenghth = x;
+}
 void ROAD::setlane_width(float x){
 	lane_width = x;
 }
@@ -14,9 +17,13 @@ void ROAD::setspeed_limit(float x){
 	speed_limit = x;
 }
 
-int ROAD::getno_of_lanes(){					// Setter methods
+int ROAD::getno_of_lanes(){					// Getter methods
 	return no_of_lanes;
-}		
+}	
+int ROAD::getroad_length(){
+	return road_lenghth;
+}
+
 float ROAD::getlane_width(){
 	return lane_width;
 }
@@ -59,21 +66,5 @@ bool ROAD::is_pedestrian_crossing(string s){
 	}
 }
 
-bool is_weather_bad(string s) {
-	if (s == "snow" || s == "snowy")
-	{
-		// increase safe spacing distance by x% for y vehicle
-	}
-
-	else if (s == "rain" || s == "rainy")
-	{
-		// increase safe spacing distance by x% for y vehicle
-	}
-
-	else if (s == "ice" || s == "black ice")
-	{
-		// increase safe spacing distance by x% for y vehicle
-	}
-}
 
 

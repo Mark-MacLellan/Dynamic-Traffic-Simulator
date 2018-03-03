@@ -2,9 +2,14 @@
 #define Motorbike_h
 #include "Vehicle.h"
 
-class Motorbike : public Vehicle{
-	void setsize(int, int);
-	void setspeedlim(int);
-	void setbrakedist(int, int);
+class Motorbike : public Vehicle {
+
+private:
+
+
+public:
+	void random_dimensions();	//Used to randomly generate a Motorbike within a threshold
+								// of sizes
+
 };
-#endif
+#endif // !Motorbike_H
