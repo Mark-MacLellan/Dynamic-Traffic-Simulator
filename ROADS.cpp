@@ -18,7 +18,7 @@ void ROAD::setroad_length(int x){
 	road_lenghth = x;
 	cout << "Road is " << x << " meters." << endl;
 }
-											// Setter methods
+											// Getter methods
 int ROAD::getno_of_lanes(){					
 	return no_of_lanes;
 }

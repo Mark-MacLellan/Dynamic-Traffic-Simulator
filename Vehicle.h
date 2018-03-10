@@ -12,6 +12,7 @@ protected:
 	float acceleration;
 	float breaking_distance;
 	int max_speed;
+	int grid_location;			// Determines vehicle position on road 
 
 public:
 	// add in constructors and destructors (probably need to add them for sub classes as opposed to parent class).
@@ -21,14 +22,17 @@ public:
 	void set_max_speed(float);
 	void set_acceleration(float);
 	void set_breaking_distance(float);
+	
 
 
 	float get_height();			// Setter methods
 	float get_length();
 	float get_width();
-	float get_acceleration(float);
-	float get_breaking_distance(float);
-	int get_max_speed(float);
+	float get_acceleration();
+	float get_breaking_distance();
+	int get_max_speed();
+								// Other
+	int grid_loction(int stop_s, int start_s);
 
 	// CONSTRUCTORS AND DESTRUCTORS
 
