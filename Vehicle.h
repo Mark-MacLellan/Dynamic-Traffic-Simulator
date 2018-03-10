@@ -21,7 +21,7 @@ public:
 	void set_max_speed(float);
 	void set_acceleration(float);
 	void set_breaking_distance(float);
-	
+
 
 	float get_height();			// Setter methods
 	float get_length();
@@ -29,6 +29,8 @@ public:
 	float get_acceleration(float);
 	float get_breaking_distance(float);
 	int get_max_speed(float);
+
+	// CONSTRUCTORS AND DESTRUCTORS
 
 };
 #endif // !VEHICLE_H

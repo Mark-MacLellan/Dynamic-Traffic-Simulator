@@ -11,20 +11,20 @@ int Motorway::getSeparation_distance() {					// Get seperation distance
 	return Separation_Distance;
 }
 
-bool Motorway::is_weather_bad(string s) {					// Separation distance is alrtered depnding
+void Motorway::is_weather_bad(string s) {					// Separation distance is alrtered depnding
 	if (s == "snow" || s == "snowy")						// on the weather
 	{
-		Separation_Distance = Separation_Distance * 2;
+		Separation_Distance = Separation_Distance * 8;
 	}
 
 	else if (s == "rain" || s == "rainy")
 	{
-		Separation_Distance = Separation_Distance * 1.5;
+		Separation_Distance = Separation_Distance * 2;
 	}
 
 	else if (s == "ice" || s == "black ice")
 	{
-		Separation_Distance = Separation_Distance * 3;
+		Separation_Distance = Separation_Distance * 10;
 	}
 	else
 	{

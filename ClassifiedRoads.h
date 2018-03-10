@@ -11,8 +11,8 @@ private:							// Private members
 
 public:
 
-	bool is_Speed_bumps(string);	// Boolean methods
-	
+	void is_Speed_bumps(string);	// Boolean methods
+
 };
 
 #endif // !ClassifiedRoads_H

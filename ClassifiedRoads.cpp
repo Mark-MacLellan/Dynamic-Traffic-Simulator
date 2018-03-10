@@ -3,7 +3,7 @@
 
 using namespace std;
 
-bool ClassifiedRoads::is_Speed_bumps(string s) {
+void ClassifiedRoads::is_Speed_bumps(string s) {
 	if (s == "y" || s == "yes")
 	{
 		speed_limit = 20;

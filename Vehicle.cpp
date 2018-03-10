@@ -6,7 +6,7 @@ using namespace std;
 
 void Vehicle::set_height(int i) {		// Setter methods
 	height = i;
-}		
+}
 void Vehicle::set_length(float f) {
 	length = f;
 }

@@ -3,7 +3,7 @@
 #include<string>
 
 using namespace std;
-
+const float LANES = 3.65;		// Standard British Lane width. Negligible exceptions hence constant.
 class ROAD
 {
 protected:							// Protected members to be 
@@ -16,24 +16,23 @@ protected:							// Protected members to be
 	bool intersections;
 	bool pedestrian_crossing;
 	string weather_params;
-	const float LANES = 3.65;		// Standard British Lane width. Negligible exceptions hence constant.
+	
 
 public:
 	// add in constructors and destructors (probably need to add them for sub classes as opposed to parent class).
 	void setno_of_lanes(int);		// Setter methods
 	void setroad_length(int);
-	void setlane_width(float);
 	void setspeed_limit(float);
 
 	int getno_of_lanes();			// Getter methods
 	int getroad_length();
-	float getlane_width();			// <-- Set lane width as constant so can probably get rid of this
 	float getspeed_limit();
 
 	bool is_traffic_lights(string);	// Boolean methods
 	bool is_bi_directional(string);
 	bool is_pedestrian_crossing(string);
-	
+
+	// CONSTRUCTORS AND DESTRUCTORS
 
 };
 

@@ -9,7 +9,7 @@ private:
 
 public:
 	void random_dimensions();	//Used to randomly generate a Bus within a threshold
-								// of sizes
+	// of sizes
 	// double decker?
 
 };
