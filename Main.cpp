@@ -10,8 +10,11 @@
 #include "Motorbike.h"
 #include "Van.h"
 
-#include <ctime>
-#include <vector>
+#include<Windows.h>
+#include<conio.h>
+#include<stdlib.h>
+#include<ctime>
+#include<vector>
 #include<iostream>
 
 using namespace std;
@@ -23,6 +26,13 @@ int main()
 	ClassifiedRoads example_c;
 	Motorway example_d;
 	int roadtype;
+	int x, y;
+	
+
+
+	
+
+
 
 	cout << "Please choose the type of road you wish to define :" << endl;
 	cout << "1. A Road\n2. B Road\n3. Classified Road\n4. Motorway" << endl;
@@ -33,65 +43,65 @@ int main()
 	case 1:									// 4 cases corrosponding to each road subclass. So far user is setting the major road parametrers might try to tidy this...
 		int length, lanes, sep_dist;		// ... up later but sufficient for now.
 		float speed_lim;
-		cout << "Please set the following parameters:\n-length of the A Road in meters\n-The speed limit in kph\n-The separation distance\n-The number of lanes: " << endl;
-		cin >> length;
-		cin >> speed_lim;
+		cout << "\nPlease set the following parameters:\n\n-length of the A Road in meters\n-The number of lanes:\n-The speed limit in kph\n-The separation distance" << endl;
+		cin >> x;							// Parameters for defining road length (x) and width (y) i.e. lanes
+		cin >> y;
+		cin >> speed_lim;					// Setting Road Speed Limit
 		cin >> sep_dist;
-		cin >> lanes;
-		example_a.setroad_length(length);
-		example_a.getroad_length();
+		cout << "Defined Road" << endl;
+		example_a.draw_road(x, y);			// Calling draw_road function to layout the user defined road
+		cout << endl << endl;
+		_getch();
 		example_a.setspeed_limit(speed_lim);
 		example_a.getspeed_limit();
-		example_a.setno_of_lanes(lanes);
-		example_a.getno_of_lanes();
 		example_a.setSeparation_distance(sep_dist);
 		example_a.getSeparation_distance();
 		
 		
 		break;
 	case 2:
-		cout << "Please set the following parameters:\n-length of the B Road in meters\n-The speed limit in kph\n-The separation distance\n-The number of lanes: " << endl;
-		cin >> length;
-		cin >> speed_lim;
+		cout << "\nPlease set the following parameters:\n\n-length of the B Road in meters\n-The number of lanes:\n-The speed limit in kph\n-The separation distance" << endl;
+		cin >> x;							// Parameters for defining road length (x) and width (y) i.e. lanes
+		cin >> y;
+		cin >> speed_lim;					// Setting Road Speed Limit
 		cin >> sep_dist;
-		cin >> lanes;
-		example_b.setroad_length(length);
-		example_b.getroad_length();
+		cout << "Defined Road" << endl;
+		example_b.draw_road(x, y);			// Calling draw_road function to layout the user defined road
+		cout << endl << endl;
+		_getch();
 		example_b.setspeed_limit(speed_lim);
 		example_b.getspeed_limit();
-		example_b.setno_of_lanes(lanes);
-		example_b.getno_of_lanes();
 		example_b.setSeparation_distance(sep_dist);
 		example_b.getSeparation_distance();
 		
 		
 		break;
 	case 3:
-		cout << "Please set the following parameters : \n - length of the Classified Road in meters\n - The speed limit in kph\n - The number of lanes : " << endl;
-		cin >> length;
-		cin >> speed_lim;
+		cout << "\nPlease set the following parameters:\n\n-length of the Classified Road in meters\n-The number of lanes:\n-The speed limit in kph\n-The separation distance" << endl;
+		cin >> x;							// Parameters for defining road length (x) and width (y) i.e. lanes
+		cin >> y;
+		cin >> speed_lim;					// Setting Road Speed Limit
 		cin >> sep_dist;
-		cin >> lanes;
-		example_c.setroad_length(length);
-		example_c.getroad_length();
+		cout << "Defined Road" << endl;
+		example_c.draw_road(x, y);			// Calling draw_road function to layout the user defined road
+		cout << endl << endl;
+		_getch();
 		example_c.setspeed_limit(speed_lim);
 		example_c.getspeed_limit();
-		example_c.setno_of_lanes(lanes);
-		example_c.getno_of_lanes();
 		
 		break;
 	case 4:
-		cout << "Please set the following parameters:\n-length of the Motorway in meters\n-The speed limit in kph\n-The separation distance\n-The number of lanes: " << endl;
-		cin >> length;
-		cin >> speed_lim;
+		cout << "\nPlease set the following parameters:\n\n-length of the Motorway in meters\n-The number of lanes:\n-The speed limit in kph\n-The separation distance" << endl;
+		cin >> x;							// Parameters for defining road length (x) and width (y) i.e. lanes
+		cin >> y;
+		cin >> speed_lim;					// Setting Road Speed Limit
 		cin >> sep_dist;
-		cin >> lanes;
-		example_d.setroad_length(length);
-		example_d.getroad_length();
+		cout << "Defined Road" << endl;
+		example_d.draw_road(x, y);			// Calling draw_road function to layout the user defined road
+		cout << endl << endl;
+		_getch();
 		example_d.setspeed_limit(speed_lim);
 		example_d.getspeed_limit();
-		example_d.setno_of_lanes(lanes);
-		example_d.getno_of_lanes();
 		example_d.setSeparation_distance(sep_dist);
 		example_d.getSeparation_distance();
 		
@@ -129,10 +139,10 @@ int main()
 											// This for "vector" loop iterates through the current ("cur") element in the loop and accesses/ prints out the method/ values for that object
 		for (vector<Vehicle*>::iterator cur = vehicle_lanes.begin(); cur != vehicle_lanes.end(); cur++){
 			
-			cout << (*cur)->get_max_speed() << endl;
-			cout << (*cur)->grid_loction(elapsed_time, start_s) << endl;
+			cout << (*cur)->get_max_speed() << " kph." <<  endl;		//The * operator gives the item referenced by the iterator, which is a pointer. Then the -> dereferences that pointer.
+			cout << (*cur)->grid_loction(elapsed_time, start_s) << " units travelled." << endl;
 			system("pause");
-			
+			delete[] &vehicle_lanes;		// Deletes dynamic memory allocation
 		}
 		elapsed_time++;						// Increasing counter with each loop
 		cout << "\nElapsed Time is: " << elapsed_time<< " unit seconds." << endl;
@@ -144,3 +154,11 @@ int main()
 	return 0;
 
 }
+
+
+
+
+
+
+
+

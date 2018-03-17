@@ -16,7 +16,7 @@ protected:							// Protected members to be
 	bool intersections;
 	bool pedestrian_crossing;
 	string weather_params;
-	
+
 
 public:
 	// add in constructors and destructors (probably need to add them for sub classes as opposed to parent class).
@@ -31,6 +31,8 @@ public:
 	bool is_traffic_lights(string);	// Boolean methods
 	bool is_bi_directional(string);
 	bool is_pedestrian_crossing(string);
+
+	void draw_road(int, int);
 
 	// CONSTRUCTORS AND DESTRUCTORS
 

@@ -22,7 +22,7 @@ public:
 	void set_max_speed(float);
 	void set_acceleration(float);
 	void set_breaking_distance(float);
-	
+
 
 
 	float get_height();			// Setter methods
@@ -31,7 +31,7 @@ public:
 	float get_acceleration();
 	float get_breaking_distance();
 	int get_max_speed();
-								// Other
+	// Other
 	int grid_loction(int stop_s, int start_s);
 
 	// CONSTRUCTORS AND DESTRUCTORS
