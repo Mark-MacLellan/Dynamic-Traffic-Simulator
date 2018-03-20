@@ -20,7 +20,7 @@ void Vehicle::set_max_speed(float f) {
 void Vehicle::set_acceleration(float f) {
 	acceleration = f;
 }
-void Vehicle::set_breaking_distance(float f) {
+void Vehicle::set_breaking_distance(float f){
 	breaking_distance = f;
 }
 
@@ -28,7 +28,7 @@ void Vehicle::set_breaking_distance(float f) {
 float Vehicle::get_height() {		// Getter methods
 	return height;
 }
-float Vehicle::get_length() {
+float Vehicle::get_length(){
 	return length;
 }
 float Vehicle::get_width() {
@@ -44,7 +44,7 @@ int Vehicle::get_max_speed() {
 	return max_speed;
 }
 
-int Vehicle::grid_loction(int stop_s, int start_s) {				// Other Methods
+int Vehicle::grid_loction(int stop_s, int start_s){				// Other Methods
 	float travel_time = stop_s; //(stop_s - start_s) / double(CLOCKS_PER_SEC);
 	grid_location = max_speed * travel_time;
 	return grid_location;

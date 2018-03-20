@@ -18,4 +18,4 @@ public:
 	void is_weather_bad(string); // <-not 100% sure what type this method would be or how to implement it // work in progress
 };
 
-#endif // !Aroads_Hads_H
+#endif // !Aroads_H
