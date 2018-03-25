@@ -9,7 +9,7 @@ private:
 
 public:
 	void random_dimensions();	//Used to randomly generate a Van within a threshold
-	// of sizes
+								// of sizes
 
 };
 #endif // !Van_H
