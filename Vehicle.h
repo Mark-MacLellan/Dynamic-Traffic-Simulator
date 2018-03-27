@@ -1,8 +1,8 @@
 #ifndef Vehicle_h
 #define Vehicle_h
 #include <stdlib.h>
-#include<vector>
 using namespace std;
+
 
 class Vehicle {
 
@@ -13,7 +13,8 @@ protected:
 	float acceleration;
 	float breaking_distance;
 	int max_speed;
-	int grid_location;			// Determines vehicle position on road 
+	int grid_location;			// Determines vehicle position on road
+	int queue_position;
 
 public:
 	// add in constructors and destructors (probably need to add them for sub classes as opposed to parent class).
@@ -23,22 +24,41 @@ public:
 	void set_max_speed(float);
 	void set_acceleration(float);
 	void set_breaking_distance(float);
+	
 
-
-
+	int get_grid_location(){ return this->grid_location;  }
 	float get_height();			// Setter methods
 	float get_length();
 	float get_width();
 	float get_acceleration();
 	float get_breaking_distance();
 	int get_max_speed();
-	// Other
+								// Other
 	int grid_loction(int stop_s, int start_s);
 
+	bool operator < (const Vehicle& rhs) const
+	{
+		return (this->grid_location < rhs.grid_location);
+	}
+
+	bool operator > (const Vehicle& rhs) const
+	{
+		return !(this->operator<(rhs));
+	}
 
 	// CONSTRUCTORS AND DESTRUCTORS
 
 };
+
+
+
+//bool comparison(Vehicle a, Vehicle b){
+//	return a.queue() < b.queue();
+//}
+
+bool CompareVehicleLocation(Vehicle* lhs, Vehicle* rhs);
+
+
 #endif // !VEHICLE_H
 
 

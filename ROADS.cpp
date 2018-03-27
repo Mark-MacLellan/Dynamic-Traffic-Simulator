@@ -75,12 +75,10 @@ if (s == "snow" || s == "snowy")
 {
 // increase safe spacing distance by x% for y vehicle
 }
-
 else if (s == "rain" || s == "rainy")
 {
 // increase safe spacing distance by x% for y vehicle
 }
-
 else if (s == "ice" || s == "black ice")
 {
 // increase safe spacing distance by x% for y vehicle
@@ -114,3 +112,4 @@ void ROAD::draw_road(int x, int y)
 	}
 	delete[] a;						// Delete dynamic memory allocation
 }
+
