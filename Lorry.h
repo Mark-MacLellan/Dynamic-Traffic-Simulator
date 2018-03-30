@@ -9,6 +9,6 @@ private:
 
 public:
 	void random_dimensions();	//Used to randomly generate a Lorry within a threshold
-	// of sizes
+								// of sizes
 };
 #endif // !Lorry_H

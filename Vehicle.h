@@ -24,16 +24,16 @@ public:
 	void set_max_speed(float);
 	void set_acceleration(float);
 	void set_breaking_distance(float);
-	
 
-	int get_grid_location(){ return this->grid_location;  }
+
+	int get_grid_location() { return this->grid_location; }
 	float get_height();			// Setter methods
 	float get_length();
 	float get_width();
 	float get_acceleration();
 	float get_breaking_distance();
 	int get_max_speed();
-								// Other
+	// Other
 	int grid_loction(int stop_s, int start_s);
 
 	bool operator < (const Vehicle& rhs) const

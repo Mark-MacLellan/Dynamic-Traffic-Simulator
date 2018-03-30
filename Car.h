@@ -8,7 +8,7 @@ private:
 
 public:
 	void random_dimensions();	//Used to randomly generate a Car within a threshold
-	// of sizes
+								// of sizes
 
 };
 #endif // !CAR_H

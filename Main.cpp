@@ -20,7 +20,7 @@
 
 using namespace std;
 
-bool pointless(Vehicle *a, Vehicle *b){ return true; }
+bool pointless(Vehicle *a, Vehicle *b) { return true; }
 
 int main()
 {											// Initialising Road Instances
@@ -154,51 +154,36 @@ int main()
 	vehicle_lanes[4]->set_max_speed(100);
 	// Experimental int vector for rearranging grid positions
 	vector<int> order;
-	
 
-	
+
+
 
 	int elapsed_time = 1;					// Set our timer
 	for (int i = 0; i < 5; i++)				// For loop to increment timer
 	{
-		// This for "vector" loop iterates through the current ("cur")
-		// element in the loop and accesses/ prints out the method/ values for that object
-		
-
-		// for 5 iterations...
-		//  ...print car stuff
-		// sort vehicle_lanes
-		// continue itaration form start...
-
-		for (vector<Vehicle*>::iterator cur = vehicle_lanes.begin(); cur != vehicle_lanes.end(); cur++){
-			// Iterator accessing Vehicle Methods for Data
+			// This for "vector" loop iterates through the current ("cur")
+			// element in the loop and accesses/ prints out the method/ values for that object
+		for (vector<Vehicle*>::iterator cur = vehicle_lanes.begin(); cur != vehicle_lanes.end(); cur++) {
 			
+			// Iterator accessing Vehicle Methods for Data
 			cout << (*cur)->get_max_speed() << " kph." << endl;																																												//The * operator gives the item referenced by the iterator, which is a pointer. Then the -> dereferences that pointer.
 			cout << (*cur)->grid_loction(elapsed_time, start_s) << " units travelled." << endl;
-			
-			/*order.push_back((*cur)->grid_loction(elapsed_time, start_s));
-			printVector(order);				// Prints current order of vector*/
-			//bubbleSort(order);				// Sorts order of vector based on grid_position
-			
+			// Pause system
 			_getch();
-
-	
 		}
-		for (vector<Vehicle*>::iterator it = vehicle_lanes.begin(); it != vehicle_lanes.end(); it++){
-			cout << "Distance travelled is: " << (*it)->get_grid_location() << endl;
+			// Interator for sorting vehicle order based on time x speed (distance) after each iteration
+		for (vector<Vehicle*>::iterator it = vehicle_lanes.begin(); it != vehicle_lanes.end(); it++) {
+			// Vehicle sort function
+			sort(vehicle_lanes.begin(), vehicle_lanes.end(), CompareVehicleLocation);
+			cout << "Distance travelled is: " << (*it)->get_grid_location() << " kilometers." << endl;
 		}
-		cout << "for breakpoint..." << endl;
-		sort(vehicle_lanes.begin(), vehicle_lanes.end(), CompareVehicleLocation);
-		order.clear();						// Clears vector after each iteration
 		elapsed_time++;						// Increasing counter with each loop
 		cout << "\nElapsed Time is: " << elapsed_time << " unit seconds." << endl;
 	}
 
-	//car_lanes[0]->get_acceleration(); // Used to access methods of parent class
 	//delete &vehicle_lanes;					// Deletes dynamic memory allocation
 	system("pause");
 	return 0;
-
 }
 
 void bubbleSort(vector<int>& a)
@@ -227,3 +212,6 @@ void printVector(vector<int> a) {
 	}
 	cout << "\n" << endl;
 }
+
+
+
