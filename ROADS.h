@@ -26,13 +26,13 @@ public:
 
 	int getno_of_lanes();			// Getter methods
 	int getroad_length();
-	float getspeed_limit();
+	int getspeed_limit();
 
 	bool is_traffic_lights(string);	// Boolean methods
 	bool is_bi_directional(string);
 	bool is_pedestrian_crossing(string);
 
-	void draw_road(int, int);
+	void draw_road(int length, int lanes);
 
 	// CONSTRUCTORS AND DESTRUCTORS
 

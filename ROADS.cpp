@@ -26,7 +26,7 @@ int ROAD::getno_of_lanes() {
 	return no_of_lanes;
 }
 
-float ROAD::getspeed_limit() {
+int ROAD::getspeed_limit() {
 	return speed_limit;
 }
 int ROAD::getroad_length() {
@@ -75,12 +75,10 @@ if (s == "snow" || s == "snowy")
 {
 // increase safe spacing distance by x% for y vehicle
 }
-
 else if (s == "rain" || s == "rainy")
 {
 // increase safe spacing distance by x% for y vehicle
 }
-
 else if (s == "ice" || s == "black ice")
 {
 // increase safe spacing distance by x% for y vehicle
@@ -88,20 +86,20 @@ else if (s == "ice" || s == "black ice")
 }*/
 
 
-void ROAD::draw_road(int x, int y)
+void ROAD::draw_road(int length, int lanes)
 
 {
 	int j, k;
 
-	int** a = new int*[x];			// Dynamic 2D array which allows user to define road parameters...	
-	for (int i = 0; i < x; ++i)		// Instead of being "hard-wired" to a set size
-		a[i] = new int[y];
+	int** a = new int*[length];			// Dynamic 2D array which allows user to define road parameters...	
+	for (int i = 0; i < length; ++i)		// Instead of being "hard-wired" to a set size
+		a[i] = new int[lanes];
 
 	cout << endl;
 
-	for (j = 0; j < x; j++)			// Nested loops for drawing Road with ASCII Characters
+	for (j = 0; j < length; j++)			// Nested loops for drawing Road with ASCII Characters
 	{
-		for (k = 0; k < y; k++)
+		for (k = 0; k < lanes; k++)
 		{
 			if (k == 0)
 				cout << char(186);	// Draws lane left-handside "boundary"
@@ -114,3 +112,4 @@ void ROAD::draw_road(int x, int y)
 	}
 	delete[] a;						// Delete dynamic memory allocation
 }
+
